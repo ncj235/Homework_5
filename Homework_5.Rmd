@@ -26,4 +26,10 @@ homicides
 #filter for baltimore homicides
 baltimore <- homicides %>%
   filter(city == "Baltimore")
+
+#pull out month and year
+month <- baltimore %>%
+  mutate(reported_date = ymd(reported_date)) %>%
+  mutate(month = format(reported_date, "%m")) %>%
+  mutate(year = format(reported_date, "%y"))
 ```
