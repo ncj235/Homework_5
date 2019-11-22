@@ -32,4 +32,7 @@ month <- baltimore %>%
   mutate(reported_date = ymd(reported_date)) %>%
   mutate(month = format(reported_date, "%m")) %>%
   mutate(year = format(reported_date, "%y"))
+
+#making month a factor variable
+month$month <- as.factor(month$month)
 ```
