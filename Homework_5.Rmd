@@ -35,4 +35,7 @@ month <- baltimore %>%
 
 #making month a factor variable
 month$month <- as.factor(month$month)
+
+#setting up dates for graph
+month$month_year <- format(as.Date(month$reported_date), "%y-%m")
 ```
