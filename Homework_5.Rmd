@@ -60,7 +60,9 @@ season_2 <- season %>%
   mutate(month_year = parse_date_time(month_year, "ym")) %>%
   mutate(month_year = ymd(month_year)) %>%
   count(month_year, season, name = 'total') 
+```
 
+```{r, fig.height=4, fig.width=20}
 #data for arrest
 arrest <- data.frame(month_year = as.Date('2015-04-12'), total = 45)
 
