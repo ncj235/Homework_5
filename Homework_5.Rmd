@@ -61,6 +61,9 @@ season_2 <- season %>%
   mutate(month_year = ymd(month_year)) %>%
   count(month_year, season, name = 'total') 
 
+#data for arrest
+arrest <- data.frame(month_year = as.Date('2015-04-12'), total = 45)
+
 #plot data
 plot_data <- season_2 %>%
   ggplot(aes(x = month_year, y = total)) +
