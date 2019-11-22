@@ -60,4 +60,19 @@ season_2 <- season %>%
   mutate(month_year = parse_date_time(month_year, "ym")) %>%
   mutate(month_year = ymd(month_year)) %>%
   count(month_year, season, name = 'total') 
+
+#plot data
+plot_data <- season_2 %>%
+  ggplot(aes(x = month_year, y = total)) +
+  geom_col(aes(fill = season)) +
+  geom_vline(xintercept = as.numeric(as.Date("2015-04-01")), 
+             linetype = 4, size = 2, color = "red") +
+  geom_smooth(se = FALSE, span = 0.10) +
+  scale_fill_manual(values = c("Winter" = "lightblue", "Summer" = "gray")) +
+  scale_x_date(name = "Date", date_labels = "%y") +
+  labs(y = "Monthly homicides") +
+  ggtitle("Homicides in Baltimore, MD") +
+  theme_dark() +
+  theme(legend.position = "bottom")
+plot_data
 ```
