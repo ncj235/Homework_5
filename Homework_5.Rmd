@@ -22,4 +22,8 @@ library(ggplot2)
 #read in data
 homicides <- read_csv (file = "https://raw.githubusercontent.com/washingtonpost/data-homicides/master/homicide-data.csv")
 homicides
+
+#filter for baltimore homicides
+baltimore <- homicides %>%
+  filter(city == "Baltimore")
 ```
