@@ -53,4 +53,11 @@ season <- month %>%
                              'Summer' = "10",
                              'Winter' = "11",
                              'Winter' = "12"))
+
+#aggregate data and find total by month
+season_2 <- season %>%
+  select(year, month, season, month_year) %>%
+  mutate(month_year = parse_date_time(month_year, "ym")) %>%
+  mutate(month_year = ymd(month_year)) %>%
+  count(month_year, season, name = 'total') 
 ```
