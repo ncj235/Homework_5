@@ -38,4 +38,19 @@ month$month <- as.factor(month$month)
 
 #setting up dates for graph
 month$month_year <- format(as.Date(month$reported_date), "%y-%m")
+
+#create season column 
+season <- month %>%
+  mutate(season = fct_recode(month, 'Winter' = "01",
+                             'Winter' = "02",
+                             'Winter' = "03",
+                             'Winter' = "04",
+                             'Summer' = "05",
+                             'Summer' = "06",
+                             'Summer' = "07",
+                             'Summer' = "08",
+                             'Summer' = "09",
+                             'Summer' = "10",
+                             'Winter' = "11",
+                             'Winter' = "12"))
 ```
