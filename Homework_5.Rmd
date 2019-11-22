@@ -1,0 +1,25 @@
+---
+title: "Homework_5"
+author: "Nikki Johnson"
+date: "11/22/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#load required packages
+library(readr)
+library(magrittr)
+library(tidyr)
+library(dplyr)
+library(lubridate)
+library(forcats)
+library(ggplot2)
+
+#read in data
+homicides <- read_csv (file = "https://raw.githubusercontent.com/washingtonpost/data-homicides/master/homicide-data.csv")
+homicides
+```
