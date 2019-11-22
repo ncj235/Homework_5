@@ -78,4 +78,12 @@ plot_data <- season_2 %>%
   theme_dark() +
   theme(legend.position = "bottom")
 plot_data
+
+#add highlight
+plot_highlight <- plot_data + 
+        geom_text(data = arrest,
+                 label = "Arrest of Freddie Gray",
+                 size = 7,
+                 color = "white", vjust = 2, hjust = 1.15)
+plot_highlight
 ```
